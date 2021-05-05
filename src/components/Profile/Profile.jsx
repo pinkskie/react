@@ -1,13 +1,24 @@
+import React from 'react';
 import MyPosts from './MyPosts/MyPosts'
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 import classes from './Profle.module.css'
-const Profile = () => {
-    return <div className={classes.content}>
-    <div>
+
+
+const Profile = (props) => {
+
+  
+
+
+    return <div>
+      <ProfileInfo/>
+    {/* <div>
     <img className = {classes.img} src="https://cdn.hipwallpaper.com/i/9/24/Mhm1Ss.jpg"/>
     </div>
     <div>
       ava + description
-    </div>
+    </div> */}
+    <MyPosts posts={props.post}/>
+
     {/* <div>
       my posts
       <div>
@@ -22,7 +33,7 @@ const Profile = () => {
       </div>
      </div>
     </div> */}
-    <MyPosts/>
+    
 </div>
 
 }

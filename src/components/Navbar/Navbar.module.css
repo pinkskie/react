@@ -1,13 +1,13 @@
 .nav {
     grid-area: nav;
     background-color: lightgrey;
+    padding:20px;
   }
-.item {
-    color:green; /* Doesn't work, idk why*/
-    font-size: 20px;
+.item a{
+    color:white; /* Doesn't work, idk why*/ /*updated - added 'a'*/
+    text-decoration: none;
     
 }
-.item.active {
+.item a.active {
   color:gold; /* still doesn't work*/
-  font-size:50px;
 }
