@@ -1,0 +1,13 @@
+.nav {
+    grid-area: nav;
+    background-color: lightgrey;
+  }
+.item {
+    color:green; /* Doesn't work, idk why*/
+    font-size: 20px;
+    
+}
+.item.active {
+  color:gold; /* still doesn't work*/
+  font-size:50px;
+}
