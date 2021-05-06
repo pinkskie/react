@@ -20,8 +20,7 @@ const Dialogs = (props) => {
 
     return (
         <div className={classes.dialogs}>
-            <div className={classes.dialogsItems}>
-
+            <div className={classes.dialogsItems}>   
                 {dialogsElements}
 
                 {/* <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>

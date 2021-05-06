@@ -1,26 +1,47 @@
 import React from 'react';
 import classes from '../MyPosts/MyPosts.module.css'
 import Post from './Posts/Post'
+
+import { addPostActionCreator, updateNewPostTextActionCreator } from './../../../redux/state';
+// let addPostActionCreator =  () => {
+//   return {
+//     type: 'ADD-POST'
+//   }
+// }
+// let updateNewPostTextActionCreator =  (text) => {
+//   return {
+//     type: 'UPDATE-NEW-POST-TEXT', newText: text
+//   }
+// }
+
 const MyPosts = (props) => {
 
-      // let posts = [
-      //   {id: 1, message: 'hi,how are you?', likesCount:52},
-      //   {id: 2, message: 'first post', likesCount:25}, 
-      //   {id: 2, message: 'flowes', likesCount:64}, 
-      //   {id: 2, message: 'hate tiktok', likesCount:12} 
-      // ]
-
       let postsElements = props.posts.map( p => <Post message={p.message} likesCount={p.likesCount}/>)
+      
+      let newPostElement = React.createRef();
 
+      let addPost = () => {
+        // let text = newPostElement.current.value; //  DELETE COMM
+        props.dispatch(addPostActionCreator());
+        newPostElement.current.value=''; // добавил сам потому что текстареа не обнуляется почему то в коде  ниже
+        // props.updateNewPostText('');
+      }
+
+      let onPostChange = () => {
+        let text = newPostElement.current.value;
+        let action = updateNewPostTextActionCreator(text);
+        // props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});  // ваще ниче не понял  
+        props.dispatch(action);
+      }
 
     return <div className={classes.postsBlock}>
       <h3>my posts</h3>
       <div>
         <div>
-        <textarea></textarea>
+        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
         </div>
         <div>
-        <button>Send</button>
+        <button onClick={ addPost }>Add Post</button>
         </div>
       </div>
     {/* <div className={classes.posts}>
