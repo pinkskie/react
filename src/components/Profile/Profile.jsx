@@ -21,7 +21,8 @@ const Profile = (props) => {
     </div> */}
 
     
-    <MyPostsContainer store={props.store}/>
+    <MyPostsContainer />
+    
     {/* <MyPostsContainer store={props.store} posts={props.profilePage.posts}
             newPostText={props.profilePagenewPostText}
             dispatch={props.dispatch}/> */}

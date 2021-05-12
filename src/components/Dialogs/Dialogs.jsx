@@ -2,14 +2,7 @@ import React from 'react';
 import classes from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Messages/Message';
-import { updateNewMessageBodyCreator, updateNewPostTextActionCreator } from '../../redux/dialogs-reducer';
-import { sendMessageCreator } from './../../redux/dialogs-reducer';
-
-// const DialogItem = (props) => {
-//     return <div className={classes.dialog + ' ' + classes.active}>
-//     <NavLink to={"/dialogs/" + props.id}>{props.name}</NavLink>
-// </div>
-// }              
+        
 
 
 const Dialogs = (props) => {
