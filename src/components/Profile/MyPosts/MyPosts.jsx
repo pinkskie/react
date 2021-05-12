@@ -2,7 +2,7 @@ import React from 'react';
 import classes from '../MyPosts/MyPosts.module.css'
 import Post from './Posts/Post'
 
-import { addPostActionCreator, updateNewPostTextActionCreator } from './../../../redux/state';
+import { addPostActionCreator, updateNewPostTextActionCreator } from './../../../redux/profile-reducer';
 // let addPostActionCreator =  () => {
 //   return {
 //     type: 'ADD-POST'
@@ -20,18 +20,19 @@ const MyPosts = (props) => {
       
       let newPostElement = React.createRef();
 
-      let addPost = () => {
-        // let text = newPostElement.current.value; //  DELETE COMM
-        props.dispatch(addPostActionCreator());
+      let onAddPost = () => {
+        props.addPost();
+        // props.dispatch(addPostActionCreator());    +
+
         newPostElement.current.value=''; // добавил сам потому что текстареа не обнуляется почему то в коде  ниже
         // props.updateNewPostText('');
       }
 
       let onPostChange = () => {
         let text = newPostElement.current.value;
-        let action = updateNewPostTextActionCreator(text);
-        // props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});  // ваще ниче не понял  
-        props.dispatch(action);
+        props.updateNewPostText(text);
+        // let action = updateNewPostTextActionCreator(text);  +
+        // props.dispatch(action);  +
       }
 
     return <div className={classes.postsBlock}>
@@ -41,7 +42,7 @@ const MyPosts = (props) => {
         <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
         </div>
         <div>
-        <button onClick={ addPost }>Add Post</button>
+        <button onClick={ onAddPost }>Add Post</button>
         </div>
       </div>
     {/* <div className={classes.posts}>

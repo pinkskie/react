@@ -3,6 +3,7 @@ import MyPosts from './MyPosts/MyPosts'
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import classes from './Profle.module.css'
 import { addPost } from './../../redux/state';
+import MyPostsContainer from './MyPosts/MyPosts-container';
 
 
 const Profile = (props) => {
@@ -18,10 +19,12 @@ const Profile = (props) => {
     <div>
       ava + description
     </div> */}
-    <MyPosts posts={props.post}
-            newPostText={props.newPostText}
-            // addPost={props.addPost}
-            dispatch={props.dispatch}/>
+
+    
+    <MyPostsContainer store={props.store}/>
+    {/* <MyPostsContainer store={props.store} posts={props.profilePage.posts}
+            newPostText={props.profilePagenewPostText}
+            dispatch={props.dispatch}/> */}
 
     {/* <div>
       my posts
