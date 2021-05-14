@@ -1,12 +1,16 @@
 import React from 'react';
+import Profile from '../Profile';
 import classes from './ProfileInfo.module.css'
-
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+  // if (!props.profile.photos) {
+  //   return <Profile/>
+  // }
     return <div>
                 <div>
                     <img className = {classes.img} src="https://cdn.hipwallpaper.com/i/9/24/Mhm1Ss.jpg"/>
                 </div>
                 <div className={classes.descriptionBlock}>
+                    <img src={props.profile?.photos.large}/>
                     ava + description
                 </div>
     {/* <div>

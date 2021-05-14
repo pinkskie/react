@@ -12,7 +12,7 @@ const Profile = (props) => {
 
 
     return <div>
-      <ProfileInfo/>
+      <ProfileInfo profile={props.profile}/>
     {/* <div>
     <img className = {classes.img} src="https://cdn.hipwallpaper.com/i/9/24/Mhm1Ss.jpg"/>
     </div>
